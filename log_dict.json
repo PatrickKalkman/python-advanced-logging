@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "root": {
+    "level": "DEBUG",
+    "handlers": ["console"]
+  },
+  "loggers": {
+    "main": {
+      "qualname": "main",
+      "level": "INFO",
+      "handlers": ["console", "file"]
+    }
+  },
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
+      "formatter": "standard",
+      "level": "INFO",
+      "stream": "ext://sys.stdout"
+    },
+    "file": {
+      "class": "logging.FileHandler",
+      "formatter": "standard",
+      "filename": "logging.txt",
+      "mode": "a"
+    }
+  },
+  "formatters": {
+    "standard": {
+      "format": "%(asctime)s %(levelname)s %(message)s"
+    }
+  }
+}
